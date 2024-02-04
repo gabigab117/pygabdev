@@ -24,9 +24,11 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('', include('landing.urls')),
+    path('sav/', include('sav.urls')),
     path('cms/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
-    path('pages/', include(wagtail_urls)),
+    path('', include(wagtail_urls)),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block title %}{{ page.title|richtext }}{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center mb-5">
+
+        <div class="col-md-7 col-sm-12 justify-text mt-5 shadow-lg p-5 white">
+            <div class="mb-5">{{ page.subtitle|richtext }}</div>
+            {{ page.body|richtext }}
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

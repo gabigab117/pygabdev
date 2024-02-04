@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url("back.png") no-repeat center center fixed;
+    background-color: #ececec;
+}
+
+.custom-btn {
+ background-color: #41CBBF;
+ color: #232323;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+img {
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: #43B1B0; /* Couleur des liens */
+}
+
+a:hover, a:focus {
+    color: #2e9885; /* Couleur des liens au survol et lorsqu'ils sont focalisés, légèrement plus foncée pour un effet interactif */
+}
+
+.white {
+    background-color: white;
+}
