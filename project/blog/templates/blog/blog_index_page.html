@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+
+{% block title %}{{ page.title|richtext }}{% endblock %}
+
+{% block body %}
+<div class="container-fluid mt-5 white shadow-lg">
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-7 col-sm-12 justify-text mt-5 p-5">
+            <h1 class="mb-5">{{ page.title }}</h1>
+            <div>{{ page.intro|richtext }}</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center mb-5">
+        {% for post in page.get_children %}
+        <div class="col-md-4 col-sm-12 justify-text mt-5 shadow-lg p-5 white">
+
+
+            <div class="card" style="width: 18rem;">
+                <img src="{{ page.main_image.url }}" class="card-img-top" alt="{{ page.main_image.caption }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.specific.intro|richtext }}</p>
+                    <p>
+                        Par
+                        {{ post.owner }}
+                        <i>le {{ post.specific.date }}</i>
+                    </p>
+                    <a href="{% pageurl post %}" class="btn custom-btn">Article</a>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

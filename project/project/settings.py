@@ -58,12 +58,14 @@ INSTALLED_APPS = [
     'wagtail',
     'modelcluster',
     'taggit',
+    'wagtailcodeblock',
     'django_recaptcha',
     'crispy_forms',
     'crispy_bootstrap5',
     'landing',
     'account',
     'sav',
+    'blog',
 ]
 
 MIDDLEWARE = [
