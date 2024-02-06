@@ -1,13 +1,13 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 
 {% block title %}{{ page.title|richtext }}{% endblock %}
 
 {% block body %}
-<div class="container-fluid mt-5 white shadow-lg">
+<div class="container-fluid white shadow-lg">
     <div class="row justify-content-center mb-5">
-        <div class="col-md-7 col-sm-12 justify-text mt-5 p-5">
+        <div class="col-md-7 col-sm-12 text-center mt-5">
             <h1 class="mb-5">{{ page.title }}</h1>
             <div>{{ page.intro|richtext }}</div>
         </div>
@@ -18,22 +18,25 @@
 <div class="container mt-5">
     <div class="row justify-content-center mb-5">
         {% for post in page.get_children %}
-        <div class="col-md-4 col-sm-12 justify-text mt-5 shadow-lg p-5 white">
+        <div class="col-md-4 col-sm-12 justify-text mt-5 p-5 d-flex justify-content-center">
 
 
-            <div class="card" style="width: 18rem;">
-                <img src="{{ page.main_image.url }}" class="card-img-top" alt="{{ page.main_image.caption }}">
+            <div class="card text-center shadow-lg white">
+                <div class="card-header">
+                    Par
+                        {{ post.owner }}
+
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
                     <p class="card-text">{{ post.specific.intro|richtext }}</p>
-                    <p>
-                        Par
-                        {{ post.owner }}
-                        <i>le {{ post.specific.date }}</i>
-                    </p>
                     <a href="{% pageurl post %}" class="btn custom-btn">Article</a>
                 </div>
+                <div class="card-footer text-body-secondary">
+                    le {{ post.specific.date }}
+                </div>
             </div>
+
 
         </div>
         {% endfor %}

@@ -27,13 +27,11 @@ class BlogPage(Page):
         ("code", CodeBlock()),
     ], use_json_field=True)
 
+    @property
     def main_image(self):
         gallery_item = self.gallery_images.first()
         if gallery_item:
-            return {
-                'image': gallery_item.image,
-                'caption': gallery_item.caption
-            }
+            return gallery_item.image
         else:
             return None
 
