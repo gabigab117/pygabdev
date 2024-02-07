@@ -17,23 +17,16 @@
 
 <div class="container mt-5">
     <div class="row justify-content-center mb-5">
-        {% for post in page.get_children %}
+        {% for project in page.get_children %}
         <div class="col-md-4 col-sm-12 justify-text mt-5 p-5 d-flex justify-content-center">
 
 
-            <div class="card text-center shadow-lg white p-5">
-                <div class="card-header">
-                    Par
-                        {{ post.owner }}
 
-                </div>
+            <div class="card text-center shadow-lg white p-5">
                 <div class="card-body">
-                    <h5 class="card-title">{{ post.specific.title }}</h5>
-                    <p class="card-text">{{ post.specific.intro|richtext }}</p>
-                    <a href="{% pageurl post %}" class="btn custom-btn">Article</a>
-                </div>
-                <div class="card-footer text-body-secondary">
-                    le {{ post.specific.date }}
+                    <h5 class="card-title">{{ project.specific.title }}</h5>
+                    <p class="card-text">{{ project.specific.intro|richtext }}</p>
+                    <a href="{% pageurl project %}" class="btn custom-btn">Projet</a>
                 </div>
             </div>
 

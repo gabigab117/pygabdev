@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'account',
     'sav',
     'blog',
+    'folio',
 ]
 
 MIDDLEWARE = [
