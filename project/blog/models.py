@@ -4,6 +4,7 @@ from wagtail.models import Page, Orderable
 from wagtail.fields import RichTextField, StreamField
 from wagtail.admin.panels import FieldPanel, InlinePanel
 from wagtail import blocks
+from wagtail.search import index
 from wagtailcodeblock.blocks import CodeBlock
 
 
@@ -34,6 +35,11 @@ class BlogPage(Page):
             return gallery_item.image
         else:
             return None
+
+    search_fields = Page.search_fields + [
+        index.SearchField("intro"),
+        index.SearchField("body")
+    ]
 
     content_panels = Page.content_panels + [
         FieldPanel("date"),

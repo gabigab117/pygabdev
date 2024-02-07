@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Projets</a>
+                    <a class="nav-link active" aria-current="page" href="{% slugurl 'projets' %}">Projets</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{% slugurl 'blog' %}">Blog</a>
@@ -33,9 +33,9 @@
                     <a class="nav-link active" aria-disabled="true" href="{% url 'sav:contact' %}">Contact</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
-                <button class="btn custom-btn" type="submit">Rechercher</button>
+            <form class="d-flex" action="{% url 'search:search' %}">
+                <input class="form-control me-2" type="text" name="query" value="{{ search_query }}">
+                <input class="btn custom-btn" type="submit" value="Rechercher">
             </form>
         </div>
     </div>

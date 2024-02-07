@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block body %}
+
+<div class="container rounded mt-5">
+    <div class="row mb-5 justify-content-center">
+        <div class="col-md-12 col-lg-7 col-xl-6 text-center background-container shadow-lg p-5 white">
+            <h1>Résultat</h1>
+
+
+           {% if search_results %}
+        <ul>
+            {% for result in search_results %}
+                <li>
+                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
+                    {% if result.search_description %}
+                        {{ result.search_description|safe }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif search_query %}
+        No results found
+    {% else %}
+        Please type something into the search box
+    {% endif %}
+
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
