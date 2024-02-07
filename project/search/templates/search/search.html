@@ -8,13 +8,13 @@
 <div class="container rounded mt-5">
     <div class="row mb-5 justify-content-center">
         <div class="col-md-12 col-lg-7 col-xl-6 text-center background-container shadow-lg p-5 white">
-            <h1>Résultat</h1>
+            <h1 class="mb-5">Résultat</h1>
 
 
            {% if search_results %}
-        <ul>
+        <ul class="list-group">
             {% for result in search_results %}
-                <li>
+                <li class="list-group-item">
                     <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
                     {% if result.search_description %}
                         {{ result.search_description|safe }}
