@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'sav',
     'blog',
     'folio',
+    'search',
 ]
 
 MIDDLEWARE = [
@@ -180,3 +181,5 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Users
 AUTH_USER_MODEL = "account.CustomUser"
+
+WAGTAIL_CODE_BLOCK_THEME = 'okaidia'
