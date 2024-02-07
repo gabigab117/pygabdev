@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'django_recaptcha',
     'crispy_forms',
     'crispy_bootstrap5',
+    'django_extensions',
     'landing',
     'account',
     'sav',

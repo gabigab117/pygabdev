@@ -1,4 +1,5 @@
 {% load static %}
+{% load static wagtailcore_tags %}
 <!doctype html>
 <html lang="fr">
 <head>
@@ -14,7 +15,7 @@
 
 <nav class="navbar navbar-expand-lg shadow" style="background-color: white;">
     <div class="container-fluid" style="background-color: white;">
-        <a class="navbar-brand" href="#">PyGabDev</a>
+        <a class="navbar-brand" href="{% slugurl 'index' %}">PyGabDev</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,11 +26,11 @@
                     <a class="nav-link active" aria-current="page" href="#">Projets</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Blog</a>
+                    <a class="nav-link active" href="{% slugurl 'blog' %}">Blog</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-disabled="true">Contact</a>
+                    <a class="nav-link active" aria-disabled="true" href="{% url 'sav:contact' %}">Contact</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
@@ -50,7 +51,8 @@
     <footer><p>© 2024 PyGabDev - Tous droits réservés
         {% if request.user.is_superuser %}
         -
-        <a href="{% url 'admin:index' %}">Administration avancée</a>
+        <a href="{% url 'admin:index' %}">Administration avancée</a> -
+        <a href="{% url 'wagtailadmin_home' %}">Administration CMS</a>
         {% endif %}</p>
     </footer>
 </div>
