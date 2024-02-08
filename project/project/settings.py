@@ -171,7 +171,7 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 WAGTAIL_SITE_NAME = 'PyGabDev'
-WAGTAILADMIN_BASE_URL = 'http://127.0.0.1'
+WAGTAILADMIN_BASE_URL = env('WAGTAIL_ADMIN_BASE_URL')
 
 # Emails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
