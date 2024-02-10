@@ -165,3 +165,10 @@ project/mediafiles/*.png
 project/mediafiles/*.gif
 project/mediafiles/*.bmp
 project/mediafiles/*.svg
+
+account/migrations/
+blog/migrations/
+folio/migrations/
+landing/migrations/
+sav/migrations/
+search/migrations/
