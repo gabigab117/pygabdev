@@ -19,6 +19,9 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    /* Ajout pour rendre les images fluides */
+    max-width: 100%;
+    height: auto;
 }
 
 a {
