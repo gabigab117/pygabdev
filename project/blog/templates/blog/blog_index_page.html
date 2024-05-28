@@ -1,9 +1,7 @@
 {% extends "base.html" %}
+
 {% load wagtailcore_tags wagtailimages_tags %}
-
-
 {% block title %}{{ page.title|richtext }}{% endblock %}
-
 {% block body %}
 <div class="container-fluid">
     <div class="row justify-content-center mb-5">
@@ -28,7 +26,7 @@
 
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{ post.specific.title }}</h5>
+                    <h5 class="card-title">{{ post.title }}</h5>
                     <p class="card-text">{{ post.specific.intro|richtext }}</p>
                     <a href="{% pageurl post %}" class="btn custom-btn">Article</a>
                 </div>
