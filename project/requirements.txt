@@ -15,7 +15,7 @@ django-permissionedforms==0.1
 django-recaptcha==4.0.0
 django-taggit==4.0.0
 django-treebeard==4.7.1
-djangorestframework==3.14.0
+djangorestframework==3.15.1
 draftjs-exporter==2.1.7
 et-xmlfile==1.1.0
 filetype==1.2.0
@@ -33,8 +33,10 @@ six==1.16.0
 soupsieve==2.5
 sqlparse==0.4.4
 telepath==0.3.1
+typing_extensions==4.9.0
 urllib3==2.2.0
-wagtail==6.0.1
+wagtail==6.1.2
+wagtail-django-recaptcha==2.1.1
 wagtailcodeblock==1.29.0.1
 webencodings==0.5.1
-Willow==1.6.3
+Willow==1.8.0
