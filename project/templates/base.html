@@ -1,5 +1,4 @@
-{% load static %}
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailuserbar %}
 <!doctype html>
 <html lang="fr">
 <head>
@@ -43,7 +42,7 @@
     </div>
 </nav>
 
-
+{% wagtailuserbar %}
 {% block body %}{% endblock %}
 
 <div class="container-fluid text-center mt-auto p-5 rounded" style="background-color: white;">
@@ -53,8 +52,7 @@
     <footer><p>© 2024 PyGabDev - Tous droits réservés
         {% if request.user.is_superuser %}
         -
-        <a href="{% url 'admin:index' %}">Administration avancée</a> -
-        <a href="{% url 'wagtailadmin_home' %}">Administration CMS</a>
+        <a href="{% url 'admin:index' %}">Administration avancée</a>
         {% endif %}</p>
         <div class="d-flex align-items-center justify-content-center">
         <a href="https://twitter.com/GabrielTrouve" target="_blank"><img src="{% static 'logos/x.png' %}" width="40" height="auto"></a>  <a href="https://www.linkedin.com/in/gabriel-trouv%C3%A9-b6a2bb159/" target="_blank"><img src="{% static 'logos/l.png' %}" width="40" height="auto"></a>  <a href="https://github.com/gabigab117" target="_blank"><img src="{% static 'logos/g.png' %}" width="40" height="auto"></a></div>
