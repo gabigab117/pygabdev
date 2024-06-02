@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 
 {% block title %}{{ page.title }}{% endblock %}
@@ -12,6 +12,12 @@
             <i>{{ page.date }}</i>
             {{ page.intro|richtext }}
             {{ page.body }}
+
+            {% for image in page.gallery_images.all %}
+            <div class="mb-3">{% image image.image original %}
+                <p class="text-center"><i>{{ image.caption }}</i></p>
+            </div>
+            {% endfor %}
             <p><a href="{{ page.get_parent.url }}" class="btn custom-btn">Retour</a></p>
 
 
