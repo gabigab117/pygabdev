@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django.contrib.sitemaps",
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -194,7 +195,6 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 AUTH_USER_MODEL = "account.CustomUser"
 
 WAGTAIL_CODE_BLOCK_THEME = 'okaidia'
-
 
 if ENV == "PROD":
     # HTTPS settings
