@@ -6,6 +6,8 @@ from wagtail.admin.panels import FieldPanel, InlinePanel
 from wagtail import blocks
 from wagtail.search import index
 from wagtailcodeblock.blocks import CodeBlock
+from modelcluster.contrib.taggit import ClusterTaggableManager
+from tag.models import BlogPageTag
 
 
 class BlogIndexPage(Page):
@@ -27,14 +29,7 @@ class BlogPage(Page):
         ("paragraphe", blocks.RichTextBlock()),
         ("code", CodeBlock()),
     ], use_json_field=True)
-
-    @property
-    def main_image(self):
-        gallery_item = self.gallery_images.first()
-        if gallery_item:
-            return gallery_item.image
-        else:
-            return None
+    tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
 
     search_fields = Page.search_fields + [
         index.SearchField("intro"),
@@ -45,6 +40,7 @@ class BlogPage(Page):
         FieldPanel("date"),
         FieldPanel("intro"),
         FieldPanel("body"),
+        FieldPanel("tags"),
         InlinePanel("gallery_images", label="Gallerie d'images")
         ]
 

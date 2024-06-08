@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'blog',
     'folio',
     'search',
+    'tag',
 ]
 
 MIDDLEWARE = [
