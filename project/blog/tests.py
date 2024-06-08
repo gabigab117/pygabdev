@@ -1,3 +1,3 @@
-from django.test import TestCase
+from wagtail.test.utils import WagtailPageTestCase
 
 # Create your tests here.
