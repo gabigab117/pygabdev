@@ -15,7 +15,7 @@ class ProjectIndexPage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        projects = self.get_children().live().order_by('-first_published_at')
+        projects = ProjectPage.objects.child_of(self).live().order_by("-date")
         context['projects'] = projects
         return context
 
