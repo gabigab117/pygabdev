@@ -10,7 +10,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -166,3 +165,4 @@ project/mediafiles/*.gif
 project/mediafiles/*.bmp
 project/mediafiles/*.svg
 */migrations/*.pyc
+project/mediafiles/*.svg
