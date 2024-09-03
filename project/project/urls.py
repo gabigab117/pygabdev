@@ -7,6 +7,7 @@ from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.contrib.sitemaps.views import sitemap
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', include('search.urls')),

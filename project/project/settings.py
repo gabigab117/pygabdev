@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import sys
 from pathlib import Path
 import environ
+import sentry_sdk
 
 env = environ.Env()
 
@@ -59,6 +60,7 @@ INSTALLED_APPS = [
     'wagtail',
     'modelcluster',
     'taggit',
+    'wagtail.contrib.search_promotions',
     'wagtailcodeblock',
     'django_recaptcha',
     'crispy_forms',
@@ -209,3 +211,10 @@ if ENV == "PROD":
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
+
+# Sentry
+sentry_sdk.init(
+    dsn=env("DSN"),
+    traces_sample_rate=1.0,
+    profiles_sample_rate=1.0,
+)

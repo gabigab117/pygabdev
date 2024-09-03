@@ -164,5 +164,3 @@ project/mediafiles/*.png
 project/mediafiles/*.gif
 project/mediafiles/*.bmp
 project/mediafiles/*.svg
-*/migrations/*.pyc
-project/mediafiles/*.svg
